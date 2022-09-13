@@ -1,14 +1,10 @@
-import { z } from "zod";
 import { createProtectedRouter } from "./context";
 
 // Example router with queries that can only be hit if the user requesting is signed in
 export const ProjectRouter = createProtectedRouter()
-  .query("getById", {
-    input: {
-      id: z.string(),
-    },
+  .query("getProjectById", {
     resolve({ ctx, input }) {
-      return ctx.prisma;
+      return 0;
     },
   })
   .query("getAllProjects", {
